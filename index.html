@@ -50,6 +50,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
             cold_count = cold_count + 1;
         }
 
+	//calculate function puts counts into proportions and updates p with proper text
+	
 	function calculate(){
 		var allergyPercent = allergy_count/4*100;
 		var coldPercent = cold_count/4*100;
@@ -100,7 +102,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
-	
+	<!--Page One Question-->
     	<div id="content" class="w3-container">
         <p>Are your eyes watery or itchy?</p> 
 	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
@@ -112,7 +114,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
-	
+	<!--Page Two Question-->
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
 		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
@@ -124,7 +126,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
-	
+	<!--Page Three Question-->
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
 		<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
@@ -136,17 +138,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
-	
+	<!--Page Four Question-->
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
 		<a onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
 		<a onclick="coldAdd();" class="w3-btn w3-black"> No </a>
-	</div>
-	<div class="w3-container">
+		<!--Results button to update p below-->
 		<a onclick="calculate();" class="w3-btn w3-black"> Calculate Results </a>
+		<!--Results displayed below-->
 		<p id="results"></p>
-	</div>
-
 </div>	
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
