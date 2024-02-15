@@ -43,20 +43,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
-	    var allergyPercent = allergy_count/4*100;
-	    document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent +"%";
 
         }
 
         function coldAdd(){
             cold_count = cold_count + 1;
-	    var allergyPercent = cold_count/4*100;
-	    document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent +"%";
         }
 
-
-	
-	
+	function calculate(){
+		var allergyPercent = allergy_count/4*100;
+		var coldPercent = cold_count/4*100;
+		 document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent +"%";
 	}
 
   </script>
@@ -142,19 +139,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
-		<a href="#resultpage" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
-		<a href="#resultpage" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+		<a onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
+		<a onclick="coldAdd();" class="w3-btn w3-black"> No </a>
 	</div>
-
-</div>	
-
-<div class="page" id="resultpage">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Results</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>plspls</p>
+	<div class="w3-container">
+		<a onclick="calculate();" class="w3-btn w3-black"> Calculate Results </a>
 		<p id="results"></p>
 	</div>
 
