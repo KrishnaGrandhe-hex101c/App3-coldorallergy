@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Krishna Grandhe
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -17,17 +17,17 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The purpsoe of this code is to differentiate between the symptoms of allergies vs. cold, and help soeone diagnose between the two.
  
 Known Issues:
-blah, blah, blah, blah
+No known issues.
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
    <head> 
-      <title>Hello World</title>  
+      <title>Allergy vs Cold Diagnosis</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -36,16 +36,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
+	//counts number of allergy "yeses"
         var allergy_count = 0;
+	//counts number of cold "yeses"
         var cold_count = 0;
+
+	//finds elemnet with resutls tag to edit inner text
 	var resultText = document.getElementById("results");
 
-
+	//add to allergy count through question answering
         function allergyAdd(){
             allergy_count = allergy_count + 1;
 
         }
 
+	//add to cold count through question answering
         function coldAdd(){
             cold_count = cold_count + 1;
         }
@@ -55,7 +60,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	function calculate(){
 		var allergyPercent = allergy_count/4*100;
 		var coldPercent = cold_count/4*100;
-		 document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent +"%";
+		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent +"%";
 	}
 
   </script>
@@ -102,7 +107,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
-	<!--Page One Question-->
+	<!--Page One Question, leads to q2-->
     	<div id="content" class="w3-container">
         <p>Are your eyes watery or itchy?</p> 
 	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
@@ -114,7 +119,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
-	<!--Page Two Question-->
+	<!--Page Two Question, leads to q3-->
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
 		<a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
@@ -126,7 +131,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
-	<!--Page Three Question-->
+	<!--Page Three Question, leads to q4-->
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
 		<a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
@@ -138,7 +143,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
-	<!--Page Four Question-->
+	<!--Page Four Question, also displays results with results button-->
 	<div id="content" class="w3-container">
 		<p>Are your symptoms seasonal or chronic?</p>
 		<a onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
