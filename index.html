@@ -41,8 +41,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	//counts number of cold "yeses"
         var cold_count = 0;
 
-	//finds elemnet with resutls tag to edit inner text
-	var resultText = document.getElementById("results");
+	
 
 	//add to allergy count through question answering
         function allergyAdd(){
@@ -60,8 +59,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	function calculate(){
 		var allergyPercent = allergy_count/4*100;
 		var coldPercent = cold_count/4*100;
-		alert("pain");
-		document.getElementById("results").innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent +"%";
+		
+		//finds elemnet with resutls tag to edit inner text
+		var resultText = document.getElementById("results");
+
+		//p updating
+		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%" + "<br> Probability it is a cold =" + coldPercent +"%";
 	}
 
   </script>
